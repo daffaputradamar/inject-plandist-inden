@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/dx.light.css")
+    link(rel="stylesheet", href="/stylesheets/simple-notify.min.css")
+  body
+    div#baseURL.d-none=BASE_URL
+    block content
+    
+    script(src="/javascripts/xlsx.full.min.js") 
+    script(src="/javascripts/jquery.min.js") 
+    script(src="/javascripts/dx.all.js") 
+    script(src="/javascripts/bootstrap.bundle.min.js") 
+    script(src="/javascripts/simple-notify.min.js") 
+    script.
+      const BASE_URL = $("#baseURL").text()

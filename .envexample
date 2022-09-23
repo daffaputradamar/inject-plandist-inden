@@ -1,0 +1,11 @@
+PORT =
+BASE_URL =
+
+# DATABASE
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_NAME=
+
+# Coba Proses TAPI Boong
+INJECT=

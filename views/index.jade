@@ -1,0 +1,15 @@
+extends layouts/layout
+
+block content
+
+  h1.mb-2 #{title} 
+
+  .my-4
+    a.btn.btn-outline-secondary.mr-4(href='/PlanDist Inden Template.xlsx')
+      | Download Template
+    input#file_upload(type='file')
+
+  .container-fluid 
+    #dx-grid
+
+  script(src="/javascripts/main.js" defer) 
