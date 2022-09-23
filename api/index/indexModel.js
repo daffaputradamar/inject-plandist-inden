@@ -147,10 +147,9 @@ function genQuery(siteid, indents) {
 
 function injectDB(siteid, indents) {
     return new Promise((resolve, reject) => {
-        const conn = new sql.ConnectionPool(config);
-        conn.connect()
-            .then(function () {
-                const request = new sql.Request(conn);
+        conn.connect(config)
+            .then((pool) => {
+                const request = pool.request();
                 const query = genQuery(siteid, indents)
                 return request.query(query)
             })
