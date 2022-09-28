@@ -65,6 +65,8 @@ function renderGrid(data = []) {
                 widget: "dxButton",
                 options: {
                     text: "Reset",
+                    stylingMode: 'outlined',
+                    type: 'danger',
                     elementAttr: {
                         id: "cancelToolbar",
                     },
@@ -78,6 +80,9 @@ function renderGrid(data = []) {
                 widget: "dxButton",
                 options: {
                     text: "Proses",
+                    stylingMode: 'contained',
+                    type: 'default',
+                    width: 220,
                     elementAttr: {
                         id: "prosesToolbar",
                     },
@@ -176,6 +181,8 @@ function processDataGrid() {
 
       return acc
     }, {})
+
+    $("#loader").modal('show')
     
     fetch(`${BASE_URL}/inject`, {
       method: 'POST',
@@ -191,6 +198,11 @@ function processDataGrid() {
         } else {
           pushNotify(NOTIFY_STATUS.ERROR, 'Error', 'Inject Plandist Gagal Terupload')
         }
+      })
+      .finally(() => {
+        setTimeout(() => {
+          $("#loader").modal('hide')
+        }, 1000);
       })
   });  
 }

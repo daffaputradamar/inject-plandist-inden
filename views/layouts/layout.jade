@@ -6,9 +6,16 @@ html
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel="stylesheet", href="/stylesheets/dx.light.css")
     link(rel="stylesheet", href="/stylesheets/simple-notify.min.css")
+    link(rel="stylesheet", href="/stylesheets/three-dots.min.css")
   body
     div#baseURL.d-none=BASE_URL
     block content
+
+    #loader.modal.fade(data-backdrop='static' data-keyboard='false' tabindex='-1' aria-labelledby='loaderLabel' aria-hidden='true')
+      .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-body.d-flex.justify-content-center.align-items-center(style='height: 200px')
+            .dot-revolution
     
     script(src="/javascripts/xlsx.full.min.js") 
     script(src="/javascripts/jquery.min.js") 
